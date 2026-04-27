@@ -8,22 +8,17 @@ services:
     container_name: nlq-backend
     restart: unless-stopped
     ports:
-      - "8000:8000"
+      - "8080:8080"
     environment:
-      # Points to your local Gemma2 — host.docker.internal resolves
-      # to the Docker host on Mac/Windows. On Linux, use the LAN IP
-      # directly (e.g. http://192.168.1.17:3000) or add:
-      #   extra_hosts:
-      #     - "host.docker.internal:host-gateway"
-      GEMMA2_BASE_URL: ${GEMMA2_BASE_URL:-http://192.168.1.17:3000}
-      GEMMA2_MODEL:    ${GEMMA2_MODEL:-gemma2}
-      GEMMA2_TIMEOUT:  ${GEMMA2_TIMEOUT:-60}
-      DB_PATH:         /data/nlq_app.db
+      HF_TOKEN:    ${HF_TOKEN}
+      HF_MODEL:    ${HF_MODEL:-openai/gpt-oss-120b}
+      HF_TIMEOUT:  ${HF_TIMEOUT:-60}
+      DB_PATH:     /data/nlq_app.db
+      UPLOAD_DIR:  /data/uploads
     volumes:
-      # SQLite DB persists across restarts
       - db-data:/data
     healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8080/health')"]
       interval: 10s
       timeout: 5s
       retries: 5
