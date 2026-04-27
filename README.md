@@ -195,26 +195,6 @@ python -m pytest tests/ -v
 
 ---
 
-## Roadmap
-
-Completed:
-
-- Natural language → SQL pipeline
-- Query explainability
-- Conversation memory
-- Bar / line chart auto-inference
-- Docker + GitHub Actions CI
-- CSV / Excel upload
-
-Planned:
-
-- JWT authentication
-- Postgres support
-- Query result caching
-- Schema tooltip on hover
-
----
-
 ## Contributing
 
 ```bash
