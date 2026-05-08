@@ -1,13 +1,13 @@
 # NLQ Analytics
 
-Ask questions about your data in plain English and get SQL, charts, and insights back instantly — no SQL knowledge required.
+An NLQ-to-SQL engine with a React analytics dashboard — type a question, get back validated SQL, auto-inferred charts, and structured query provenance.
 
 ---
 
 ## Features
 
-- **Natural Language Queries** — Type plain English, get SQL and results instantly.
-- **Auto Chart Inference** — Bar and line charts generated automatically based on result shape.
+- **Natural Language Queries** — Type in question to translate into sql queries and charts.
+- **Auto Chart Inference** — charts generated automatically based on data.
 - **Query Explainability** — See exactly how every query was constructed: filters, group-bys, aggregates, and source tables.
 - **Conversation Memory** — Follow-up questions remember previous context.
 - **SQL Safety Layer** — Blocks dangerous SQL before the database is touched.
